@@ -40,6 +40,12 @@ return Integer.parseInt(br.readLine());
 
 static boolean retPrimenumber(int num) {
 
+/** 
+ * 素数か素数ではないかを判定する
+ * 素数ならば true
+ * 素数でないなら false
+**/
+
 if(num<2) return false;
 
 int i=num-1;
