@@ -7,7 +7,7 @@ public class ScannerTest {
         // 10桁以上はintに入らない為Longを指定
         // 末尾にlをつけるとLong型となる
         long asLonglen = 10000000000l;
-        int ansNumber = (int) (Math.random() * asLonglen);
+        long ansNumber = (long) (Math.random() * asLonglen);
 
         Scanner sc = new Scanner(System.in);
         String rtnLine = sc.nextLine();
@@ -26,11 +26,11 @@ public class ScannerTest {
         while (sc.hasNext()) {
             //桁数溢れや文字列が入った時の為にtry-catch
             try {
-                int asInt = sc.nextInt();
-                System.out.println(asInt);
+                Long asLong = sc.nextLong();
+                System.out.println(asLong);
 
                 // 答えがあっていたらループを抜ける
-                if (ansNumber == asInt) {
+                if (ansNumber == asLong) {
                     sc.close();
                     System.out.println("d(^ ^) Done!");
                     break;
@@ -44,7 +44,7 @@ public class ScannerTest {
             
             // 課題の表示
             // 10桁を表示するために"0000000000"表示のフォーマット
-            System.out.println(String.format("%10d", ansNumber));
+            System.out.println(String.format("%010d", ansNumber));
 
         }
 
